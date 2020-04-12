@@ -122,6 +122,17 @@ const thaumaturgy = new Spell(
 );
 
 // first level Spells
+const animalFriendship = new Spell(
+	'Animal Friendship',
+	1,
+	'Enchantment',
+	'1 Action',
+	'30 feet',
+	'V S M (A morsel of food)',
+	'24 hours',
+	'This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast’s Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell’s duration. If you or one of your companions harms the target, the spells ends.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st.'
+);
+
 const bane = new Spell(
 	'Bane',
 	1,
@@ -153,6 +164,17 @@ const burningHands = new Spell(
 	'V S',
 	'Instantaneous',
 	"As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+);
+
+const charmPerson = new Spell(
+	'Charm Person',
+	1,
+	'Enchantment',
+	'1 Action',
+	'30 feet',
+	'V S',
+	'1 hour',
+	"You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you as a friendly acquaintance. When the spell ends, the creature knows it was charmed by you.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them."
 );
 
 const command = new Spell(
@@ -221,6 +243,28 @@ const detectPoisonAndDisease = new Spell(
 	'For the duration, you can sense the presence and location of poisons, poisonous creatures, and diseases within 30 feet of you. You also identify the kind of poison, poisonous creature, or disease in each case.<br>The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.'
 );
 
+const disguiseSelf = new Spell(
+	'Disguise Self',
+	1,
+	'Illusion',
+	'1 Action',
+	'Self',
+	'V S',
+	'1 hour',
+	"You make yourself—including your clothing, armor, weapons, and other belongings on your person—look different until the spell ends or until you use your action to dismiss it. You can seem 1 foot shorter or taller and can appear thin, fat, or in between. You can’t change your body type, so you must adopt a form that has the same basic arrangement of limbs. Otherwise, the extent of the illusion is up to you.<br>The changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing or would feel your head and hair. If you use this spell to appear thinner than you are, the hand of someone who reaches out to touch you would bump into you while it was seemingly still in midair.<br>To discern that you are disguised, a creature can use its action to inspect your appearance and must succeed on an Intelligence (Investigation) check against your spell save DC."
+);
+
+const divineFavor = new Spell(
+	'Divine Favor',
+	1,
+	'Evocation',
+	'1 Bonus Action',
+	'Self',
+	'V S',
+	'Concentration, Up to 1 minute',
+	"Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal an extra 1d4 radiant damage on a hit."
+);
+
 const faerieFire = new Spell(
 	'Faerie Fire',
 	1,
@@ -230,6 +274,17 @@ const faerieFire = new Spell(
 	'V',
 	'Concentration, Up to 1 minute',
 	"Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.<br>Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can’t benefit from being invisible."
+);
+
+const fogCloud = new Spell(
+	'Fog Cloud',
+	1,
+	'Conjuration',
+	'1 Action',
+	'120 feet',
+	'V S',
+	'Concentration, Up to 1 hour',
+	"You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, the radius of the fog increases by 20 feet for each slot level above 1st."
 );
 
 const guidingBolt = new Spell(
@@ -320,6 +375,28 @@ const shieldOfFaith = new Spell(
 	'A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.'
 );
 
+const speakWithAnimals = new Spell(
+	'Speak With Animals',
+	1,
+	'Divination (ritual)',
+	'1 Action',
+	'Self',
+	'V S',
+	'10 minutes',
+	'You gain the ability to comprehend and verbally communicate with beasts for the duration. The knowledge and awareness of many beasts is limited by their intelligence, but at minimum, beasts can give you information about nearby locations and monsters, including whatever they can perceive or have perceived within the past day. You might be able to persuade a beast to perform a small favor for you, at the GM’s discretion.'
+);
+
+const thunderwave = new Spell(
+	'Thunderwave',
+	1,
+	'Evocation',
+	'1 Action',
+	'Self (15 foot cube)',
+	'V S',
+	'Instantaneous',
+	'A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn’t pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell’s effect, and the spell emits a thunderous boom audible out to 300 feet.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.'
+);
+
 // level 2 Spells
 const aid = new Spell(
 	'Aid',
@@ -342,6 +419,18 @@ const augury = new Spell(
 	'Instantaneous',
 	'By casting gem-inlaid sticks, rolling dragon bones,laying out ornate cards, or employing some other divining tool, you receive an omen from an otherworldly entity about the results of a specific course of action that you plan to take within the next 30 minutes. The DM chooses from the following possible omens:<br>\t• Weal, for good results<br>\t• Woe, for bad results<br>\t• Weal and woe, for both good and bad results<br>\t• Nothing, for results that aren’t especially good or bad<br>The spell doesn’t take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion./nIf you cast the spell two or more times before completing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The DM makes this roll in secret.'
 );
+
+const barkskin = new Spell(
+	'Barkskin',
+	2,
+	'Transmutation',
+	'1 Action',
+	'Touch',
+	' V S M (A handful of oak bark)',
+	'Concentration, Up to 1 hour',
+	'You touch a willing creature. Until the spell ends, the target’s skin has a rough, bark-like appearance, and the target’s AC can’t be less than 16, regardless of what kind of armor it is wearing.'
+);
+
 
 const blindnessDeafness = new Spell(
 	'Blindess / Deafness',
@@ -420,6 +509,17 @@ const gentleRepose = new Spell(
 	'You touch a corpse or other remains. For the duration, the target is protected from decay and can’t become undead.<br>The spell also effectively extends the time limit on raising the target from the dead, since days spent under the influence of this spell don’t count against the time limit of spells such as raise dead.'
 );
 
+const gustOfWind = new Spell(
+	'Gust of Wind',
+	2,
+	'Evocation',
+	'1 Action',
+	'Self (60-foot line)',
+	'V S M (A legume seed)',
+	'Concentration, Up to 1 minute',
+	'A line of strong wind 60 feet long and 10 feet wide blasts from you in a direction you choose for the spell’s duration. Each creature that starts its turn in the line must succeed on a Strength saving throw or be pushed 15 feet away from you in a direction following the line.<br>Any creature in the line must spend 2 feet of movement for every 1 foot it moves when moving closer to you.<br>The gust disperses gas or vapor, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance to extinguish them.<br>As a bonus action on each of your turns before the spell ends, you can change the direction in which the line blasts from you.'
+);
+
 const holdPerson = new Spell(
 	'Hold Person',
 	2,
@@ -453,6 +553,39 @@ const locateObject = new Spell(
 	'Describe or name an object that is familiar to you. You sense the direction to the object’s location, as long as that object is within 1,000 feet of you. If the object is in motion, you know the direction of its movement.<br>The spell can locate a specific object known to you, as long as you have seen it up close—within 30 feet—at least once. Alternatively, the spell can locate the nearest object of a particular kind, such as a certain kind of apparel, jewelry, furniture, tool, or weapon.<br>This spell can’t locate an object if any thickness of lead, even a thin sheet, blocks a direct path between you and the object.'
 );
 
+const magicWeapon = new Spell(
+	'Magic Weapon',
+	2,
+	'Transmutation',
+	'1 Bonus Action',
+	'Touch',
+	'V S',
+	'Concentration, Up to 1 hour',
+	"You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic weapon with a +1 bonus to attack rolls and damage rolls.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 4th level or higher, the bonus increases to +2. When you use a spell slot of 6th level or higher, the bonus increases to +3."
+);
+
+const mirrorImage = new Spell(
+	'Mirror Image',
+	2,
+	'Illusion',
+	'1 Action',
+	'Self',
+	'V S',
+	'1 Minute',
+	"Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it’s impossible to track which image is real. You can use your action to dismiss the illusory duplicates.<br>Each time a creature targets you with an attack during the spell’s duration, roll a d20 to determine whether the attack instead targets one of your duplicates.<br>If you have three duplicates, you must roll a 6 or higher to change the attack’s target to a duplicate. With two duplicates, you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.<br>A duplicate’s AC equals 10 + your Dexterity modifier. If an attack hits a duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an attack that hits it. It ignores all other damage and effects. The spell ends when all three duplicates are destroyed.<br>A creature is unaffected by this spell if it can’t see, if it relies on senses other than sight, such as blindsight, or if it can perceive illusions as false, as with truesight."
+);
+
+const passWithoutTrace = new Spell(
+	'Pass Without Trace',
+	2,
+	'Abjuration',
+	'1 Action',
+	'Self',
+	'V S M (Ashes from a burned leaf of mistletoe and a sprig of spruce)',
+	'Concentration, Up to 1 hour',
+	"A veil of shadows and silence radiates from you, masking you and your companions from detection. For the duration, each creature you choose within 30 feet of you (including you) has a +10 bonus to Dexterity (Stealth) checks and can’t be tracked except by magical means. A creature that receives this bonus leaves behind no tracks or other traces of its passage."
+);
+
 const prayerOfHealing = new Spell(
 	'Prayer of Healing',
 	2,
@@ -475,6 +608,17 @@ const protectionFromPoison = new Spell(
 	'You touch a creature. If it is poisoned, you neutralize the poison. If more than one poison afflicts the target, you neutralize one poison that you know is present, or you neutralize one at random.<br>For the duration, the target has advantage on saving throws against being poisoned, and it has resistance to poison damage.'
 );
 
+const shatter = new Spell(
+	'Shatter',
+	2,
+	'Evocation',
+	'1 Action',
+	'60 feet',
+	'V S M (A chip of mica)',
+	'Instantaneous',
+	'A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw. A nonmagical object that isn’t being worn or carried also takes the damage if it’s in the spell’s area.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of or higher, the damage increases by 1d8 for each slot level above 2nd.'
+);
+
 const scorchingRay = new Spell(
 	'Scorching Ray',
 	2,
@@ -495,6 +639,17 @@ const silence = new Spell(
 	'V S',
 	'Concentration, Up to 10 minutes',
 	'For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are deafened while entirely inside it. Casting a spell that includes a verbal component is impossible there.'
+);
+
+const spikeGrowth = new Spell(
+	'Spike Growth',
+	2,
+	'Transmutation',
+	'1 Action',
+	'150 Feet',
+	'V S M (Seven sharp thorns or seven small twigs, each sharpened to a point)',
+	'Concentration, Up to 10 minutes',
+	'The ground in a 20-foot radius centered on a point within range twists and sprouts hard spikes and thorns. The area becomes difficult terrain for the duration. When a creature moves into or within the area, it takes 2d4 piercing damage for every 5 feet it travels.<br>The transformation of the ground is camouflaged to look natural. Any creature that can’t see the area at the time the spell is cast must make a Wisdom (Perception) check against your spell save DC to recognize the terrain as hazardous before entering it.'
 );
 
 const spiritualWeapon = new Spell(
@@ -577,6 +732,28 @@ const bestowCurse = new Spell(
 	"You touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for the duration of the spell. When you cast this spell, choose the nature of the curse from the following options: Choose one ability score. While cursed, the target has disadvantage on ability checks and saving throws made with that ability score. While cursed, the target has disadvantage on attack rolls against you. While cursed, the target must make a Wisdom saving throw at the start of each of its turns. If it fails, it wastes its action that turn doing nothing. While the target is cursed, your attacks and spells deal an extra 1d8 necrotic damage to the target. A remove curse spell ends this effect. At the GM’s option, you may choose an alternative curse effect, but it should be no more powerful than those described above. The GM has final say on such a curse’s effect.<br><br><strong>At Higher Levels:</strong> If you cast this spell using a spell slot of 4th level or higher, the Duration is Concentration, up to 10 minutes. If you use a spell slot of 5th level or higher, the Duration is 8 hours. If you use a spell slot of 7th level or higher, the Duration is 24 hours. If you use a 9th level spell slot, the spell lasts until it is dispelled. Using a spell slot of 5th level or higher grants a Duration that doesn't require Concentration."
 );
 
+const blink = new Spell(
+	'Blink',
+	3,
+	'Transmutation',
+	'1 Action',
+	'Self',
+	'V S',
+	'1 Minute',
+	"Roll a d20 at the end of each of your turns for the duration of the spell. On a roll of 11 or higher, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell fails and the casting is wasted if you were already on that plane). At the start of your next turn, and when the spell ends if you are on the Ethereal Plane, you return to an unoccupied space of your choice that you can see within 10 feet of the space you vanished from. If no unoccupied space is available within that range, you appear in the nearest unoccupied space (chosen at random if more than one space is equally near). You can dismiss this spell as an action.<br>While on the Ethereal Plane, you can see and hear the plane you originated from, which is cast in shades of gray, and you can’t see anything there more than 60 feet away. You can only affect and be affected by other creatures on the Ethereal Plane. Creatures that aren’t there can’t perceive you or interact with you, unless they have the ability to do so."
+);
+
+const callLightning = new Spell(
+	'Call Lightning',
+	3,
+	'Conjuration',
+	'1 Action',
+	'120 feet',
+	'V S',
+	'Concentration, Up to 10 minute',
+	"A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point you can see 100 feet directly above you. The spell fails if you can’t see a point in the air where the storm cloud could appear (for example, if you are in a room that can’t accommodate the cloud). When you cast the spell, choose a point you can see within range. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes 3d10 lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your action to call down lightning in this way again, targeting the same point or a different one. If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell’s damage increases by 1d10.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 4th level or higher level, the damage increases by 1d10 for each slot level above 3rd."
+);
+
 const clairvoyance = new Spell(
 	'Clairvoyance',
 	3,
@@ -593,10 +770,21 @@ const createFoodAndWater = new Spell(
 	3,
 	'Conjuration',
 	'1 Action',
-	'30 Action',
+	'30 feet',
 	'V S',
 	'Instantaneous',
 	'You create 45 pounds of food and 30 gallons of water on the ground or in containers within range, enough to sustain up to fifteen humanoids or five steeds for 24 hours. The food is bland but nourishing, and spoils if uneaten after 24 hours. The water is clean and doesn’t go bad.'
+);
+
+const crusadersMantle = new Spell(
+	"Crusader's Mantle",
+	3,
+	'Evocation',
+	'1 Action',
+	'self',
+	'V',
+	'Concentration, Up to 1 minute',
+	"Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each nonhostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack."
 );
 
 const daylight = new Spell(
@@ -698,6 +886,17 @@ const nondetection = new Spell(
 	"For the duration, you hide a target that you touch from divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can’t be targeted by any divination magic or perceived through magical scrying sensors."
 );
 
+const plantGrowth = new Spell(
+	'Plant Growth',
+	3,
+	'transmutation',
+	'1 Action or 8 hours',
+	'150 feet',
+	'V S',
+	'instantaneous',
+	'This spell channels vitality into plants within a specific area. There are two possible uses for the spell, granting either immediate or long-term benefits.<br>If you cast this spell using 1 action, choose a point within range. All normal plants in a 100-foot radius centered on that point become thick and overgrown. A creature moving through the area must spend 4 feet of movement for every 1 foot it moves.<br>You can exclude one or more areas of any size within the spell’s area from being affected.<br>If you cast this spell over 8 hours, you enrich the land. All plants in a half-mile radius centered on a point within range become enriched for 1 year. The plants yield twice the normal amount of food when harvested.'
+);
+
 const protectionFromEnergy = new Spell(
 	'Protection From Energy',
 	3,
@@ -742,6 +941,17 @@ const sending = new Spell(
 	"You send a short message of twenty-five words or less to a creature with which you are familiar. The creature hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately. The spell enables creatures with Intelligence scores of at least 1 to understand the meaning of your message.<br>You can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that the message doesn’t arrive."
 );
 
+const sleetStorm = new Spell(
+	'Sleet Storm',
+	3,
+	'Conjuration',
+	'1 Action',
+	'150 feet',
+	'V S M (A pinch of dust and a few drops of water)',
+	'Concentration, Up to 1 minute',
+	"Until the spell ends, freezing rain and sleet fall in a 20-foot-tall cylinder with a 40-foot radius centered on a point you choose within range. The area is heavily obscured, and exposed flames in the area are doused.<br>The ground in the area is covered with slick ice, making it difficult terrain. When a creature enters the spell’s area for the first time on a turn or starts its turn there, it must make a Dexterity saving throw. On a failed save, it falls prone.<br>If a creature is concentrating in the spell’s area, the creature must make a successful Constitution saving throw against your spell save DC or lose concentration."
+);
+
 const speakWithDead = new Spell(
 	'Speak With Dead',
 	3,
@@ -751,6 +961,28 @@ const speakWithDead = new Spell(
 	'V S M (Burning incense)',
 	'10 minutes',
 	"You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can’t be undead. The spell fails if the corpse was the target of this spell within the last 10 days.<br>Until the spell ends, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, and the corpse is under no compulsion to offer a truthful answer if you are hostile to it or it recognizes you as an enemy. This spell doesn’t return the creature’s soul to its body, only its animating spirit. Thus, the corpse can’t learn new information, doesn’t comprehend anything that has happened since it died, and can’t speculate about future events."
+);
+
+const spiritGuardians = new Spell(
+	'Spirit Guardians',
+	3,
+	'Conjuration',
+	'1 Action',
+	'Self (15-foot radius)',
+	'V S M (A holy symbol)',
+	'Concentration, Up to 10 minutes',
+	"You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice). If you are evil, they appear fiendish. When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creature’s speed is halved in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage (if you are good or neutral) or 3d8 necrotic damage (if you are evil). On a successful save, the creature takes half as much damage.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd."
+);
+
+const windWall = new Spell(
+	'Wind Wall',
+	3,
+	'Evocation',
+	'1 Action',
+	'120 Feet',
+	'V S M (A tiny fan and a feather of exotic origin)',
+	'Concentration, Up to 1 minute',
+	"A wall of strong wind rises from the ground at a point you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the duration.<br>When the wall appears, each creature within its area must make a Strength saving throw. A creature takes 3d8 bludgeoning damage on a failed save, or half as much damage on a successful one.<br>The strong wind keeps fog, smoke, and other gases at bay. Small or smaller flying creatures or objects can’t pass through the wall. Loose, lightweight materials brought into the wall fly upward. Arrows, bolts, and other ordinary projectiles launched at targets behind the wall are deflected upward and automatically miss. (Boulders hurled by giants or siege engines, and similar projectiles, are unaffected.) Creatures in gaseous form can’t pass through it."
 );
 
 
