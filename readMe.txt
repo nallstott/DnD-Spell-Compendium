@@ -18,7 +18,7 @@ const uniqueSpellName = new Spell(
 	'spell duration',
 	'spell description'
 );
-Just use this formula for all your spells, and remember that the spell variable itself (const uniqueSpellName) needs to be one continuous word and camel case.
+Just use this formula for all your spells, and remember that the spell variable itself (const uniqueSpellName) needs to be one continuous word and camel case. All Spell properties are strings, but spell level can also be written as an integer for levels 1-9. Follow the formating used in cleric.js when you're unsure. If you use cmd+f you can likely find an instance of what you're unsure of.
 
 Step 2: format your spell description
 as always in JS, if you find that your spell description has a ' mark used at any point within the string, you'll either need to go in and change the ' to \' or change the outer quotes to double marks "" so it reads correctly in the browser. If your spell description has a line-return or line break in it, do not hit enter and create a new line. Instead, make sure there are no spaces between the period of the last sentance and the start of the new, and write <br>, which will force the line to break when rendered in HTML. All entries need to be on one line, or it won't be read in the HTML and will cause an error.
