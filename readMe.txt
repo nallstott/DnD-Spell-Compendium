@@ -16,7 +16,7 @@ const uniqueSpellName = new Spell(
 	'spell range',
 	'spell components',
 	'spell duration',
-	'spell description'
+	"spell description"
 );
 Just use this formula for all your spells, and remember that the spell variable itself (const uniqueSpellName) needs to be one continuous word and camel case. All Spell properties are strings, but spell level can also be written as an integer for levels 1-9. Follow the formating used in cleric.js when you're unsure. If you use cmd+f you can likely find an instance of what you're unsure of.
 
