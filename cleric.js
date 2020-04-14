@@ -608,17 +608,6 @@ const protectionFromPoison = new Spell(
 	'You touch a creature. If it is poisoned, you neutralize the poison. If more than one poison afflicts the target, you neutralize one poison that you know is present, or you neutralize one at random.<br>For the duration, the target has advantage on saving throws against being poisoned, and it has resistance to poison damage.'
 );
 
-const shatter = new Spell(
-	'Shatter',
-	2,
-	'Evocation',
-	'1 Action',
-	'60 feet',
-	'V S M (A chip of mica)',
-	'Instantaneous',
-	'A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw. A nonmagical object that isn’t being worn or carried also takes the damage if it’s in the spell’s area.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of or higher, the damage increases by 1d8 for each slot level above 2nd.'
-);
-
 const scorchingRay = new Spell(
 	'Scorching Ray',
 	2,
@@ -628,6 +617,17 @@ const scorchingRay = new Spell(
 	'V S',
 	'Instantaneous',
 	"You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several. Make a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 3rd level or higher, you create one additional ray for each slot level above 2nd."
+);
+
+const shatter = new Spell(
+	'Shatter',
+	2,
+	'Evocation',
+	'1 Action',
+	'60 feet',
+	'V S M (A chip of mica)',
+	'Instantaneous',
+	'A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw. A nonmagical object that isn’t being worn or carried also takes the damage if it’s in the spell’s area.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of or higher, the damage increases by 1d8 for each slot level above 2nd.'
 );
 
 const silence = new Spell(
@@ -1016,7 +1016,6 @@ function spellDetails(spell) {
 for (let x = 0; x < spellTriggers.length; x++){
 	spellTriggers[x].addEventListener('click', function() {
 		triggerID = this.id;
-		console.log(triggerID);
 		spellDetails(eval(triggerID));
 		spellDescriptionBox.style.display = 'block';
 })};
@@ -1026,4 +1025,11 @@ closeSpellDesBoxTrig.addEventListener('click', () => {
 	spellDescriptionBox.style.display = 'none';
 })
 
-spellDetails(guidance);
+//toggle cleric domain spell invisibility
+toggleDomainSpells.addEventListener('click', () => {
+	for (let x = 0; x < spellTriggers.length; x++){
+		if (spellTriggers[x].classList.contains('domain-spell')){
+			$(spellTriggers[x]).toggle();
+		}
+	}
+})

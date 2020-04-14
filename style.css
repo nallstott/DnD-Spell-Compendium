@@ -15,6 +15,11 @@ body{
 	background-size: cover;
 }
 
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
 nav{
 	height: 100px;
 	display: flex;
@@ -29,6 +34,7 @@ h3{
 	font-family: adorn-engraved, sans-serif;
 	font-weight: 400;
 	font-style: normal;
+	padding-bottom: 10px;
 }
 
 h4{
@@ -45,6 +51,7 @@ li{
 	font-style: normal;
 	font-size: 20px;
 	line-height: 26px;
+	letter-spacing: 0.9px;
 }
 
 header{
@@ -54,9 +61,6 @@ header{
 	width: 100%;
 	height: 400px;
 	font-size: 40px;
-	background-image: url('images/00_Volos_2560x1600_Wallpaper_Template.jpg');
-	background-size: cover;
-	background-position: center;
 }
 
 header h1{
@@ -74,6 +78,15 @@ header img{
 	transform: translateY(650px);
 }
 
+.black-20p-overlay{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-color: black;
+	opacity: 0.2;
+}
+
 .body-container{
 	width: 100%;
 	display: flex;
@@ -88,12 +101,10 @@ header img{
 .spell-list-container{
 	width: 55%;
 	min-height: 800px;
-	font-size: 16px;
-	padding: 20px 50px;
 	line-height: 25px;
 	display: flex;
 	align-items: flex-start;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	flex-direction: row;
 }
@@ -105,6 +116,7 @@ header img{
 
 #spell-description-box{
 	display: none;
+	/* align-self: flex-end; */
 	position: sticky;
 	/* right: 50px; */
 	top: 5vh;
@@ -162,6 +174,130 @@ header img{
 	right: 0;
 	padding: 10px;
 	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
+}
+
+#toggleDomainSpells{
+	max-width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+	text-align: center;
+	cursor: pointer;
+	margin: auto;
+}
+
+@media only screen and (max-width: 1439px) {
+	.spell-list{
+		width: 200px;
+	}
+
+	h3{
+		font-size: 30px;
+	}
+
+	li{
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	#spell-description-box h1{
+		font-family: adorn-engraved, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 32px;
+		letter-spacing: 1.1px;
+		max-width: 80%;
+		margin-bottom: 20px;
+	}
+
+	#spell-description-box p{
+		font-size: 18px;
+	}
+
+	#spell-description-box h5{
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 1000px){
+	#classes-menu{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 757px) {
+	#spell-description-box{
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+		width: 90%;
+		height: 90%;
+		padding: 60px 20px 40px 20px;
+		background-image: url('images/annie-spratt-6a3nqQ1YwBw-unsplash.jpg');
+		background-position: center;
+		background-size: cover;
+		color: white;
+	}
+
+	#close-trigger{
+		display: flex;
+		min-width: 100%;
+		min-height: 40px;
+		cursor: pointer;
+		text-decoration: underline;
+		position: absolute;
+		top: -40px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.spell-list-container{
+		width: 100%;
+	}
+
+	.spell-list{
+		width: 100%;
+	}
+
+	h3{
+		font-size: 34px;
+	}
+
+	li{
+		font-size: 22px;
+		line-height: 32px;
+	}
+
+	#classes-menu{
+		display: none;
+	}
+
+	nav{
+		justify-content: center;
+		text-align: center;
+		padding: 0px 50px;
+	}
+
+	header h1{
+		position: absolute;
+		bottom: 30px;
+		left: 30px;
+		max-width: 100%;
+		color: rgb(255, 255, 255);
+		font-family: fleisch-wolf, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 40px;
+	}
+
+	.spell-page-header{
+		max-height: 200px;
+	}
 }
