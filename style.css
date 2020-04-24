@@ -361,6 +361,13 @@ footer{
 	}
 
 	footer{
-		padding: 0 30px;
+		height: auto;
+		padding: 30px;
+	}
+
+	.disclaimers{
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 0.9px;
 	}
 }

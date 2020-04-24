@@ -12,12 +12,6 @@ header{
 	background-position: center;
 }
 
-@media screen and (max-width: 1000px){
-	header{
-		background-image: url('images/mobile/Xanathars_Wallpaper_2560x1600.jpg');
-	}
-}
-
 .list-input{
 	display: block;
 	width: 400px;
@@ -56,4 +50,27 @@ header{
 	font-style: normal;
 	font-size: 22px;
 	border: 1px solid black;
+}
+
+@media screen and (max-width: 1000px){
+	header{
+		background-image: url('images/mobile/Xanathars_Wallpaper_2560x1600.jpg');
+	}
+
+	#search-input{
+		width: 100%;
+	}
+
+	.body-container{
+		padding: 30px 15px 0px 15px;
+	}
+
+	.list-input{
+		border-bottom: 1.2px solid black;
+	}
+
+	.search-intro{
+		max-width: 100%;
+		font-weight: 600;
+	}
 }
