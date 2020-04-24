@@ -1,4 +1,4 @@
-import * as spells from 'spellsModule.js';
+import * as spells from './spellsModule.js';
 console.log(spells.fireball.name)
 // const searchBtn = document.querySelector('#searchBtn');
 // const searchedSpellList = document.querySelector('.searched-spell-list')
