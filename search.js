@@ -1,5 +1,5 @@
 import * as spells from './spellsModule.js';
-console.log(spells.fireball.name)
+console.log(spells.fireball)
 // const searchBtn = document.querySelector('#searchBtn');
 // const searchedSpellList = document.querySelector('.searched-spell-list')
 // let searchedSpell = document.querySelector('.list-input')
