@@ -1,0 +1,55 @@
+.search-intro{
+	font-size: 25px;
+	max-width: 60%;
+	margin: 40px auto;
+	text-align: center;
+	display: block;
+}
+
+header{
+	background-image: url('images/MOT_2560x1600_Wallpaper.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.list-input{
+	display: block;
+	width: 400px;
+	border: none;
+	border-bottom: 3px solid black;
+	font-size: 40px;
+	text-align: center;
+	margin: auto;
+	margin-top: 0px;
+	background: none;
+	font-family: garamond-premier-pro-display,serif;
+	font-weight: 700;
+	font-style: normal;
+	text-decoration: none;
+	letter-spacing: 2px;
+	padding: 0px;
+}
+
+.body-container{
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+#searchBtn{
+	width: 200px;
+	height: 70px;
+	text-align: center;
+	margin: auto;
+	margin-top: 30px;
+	font-family: garamond-premier-pro-display,serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 22px;
+	border: 1px solid black;
+}
+
+@media screen and (max-width: 1000px){
+	header{
+		background-image: url('images/mobile/MOT_2560x1600_Wallpaper.jpg');
+	}
+}

@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109114111-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-109114111-4');
+	</script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="DnD, 5e, Spells, Spell Compendium, Class Spells">
+	<meta name="description" content="A spell compendium organized by spell-casting class in the world of DnD 5e designed for quick browsing."
 	<meta http-equiv="X-UA=Compatible" content="ie=edge">
 	<title>DnD 5e Spell Compendium</title>
 	<link rel="icon" href="images/favicon.png" type="image/png">
@@ -19,13 +30,57 @@
 		<p>This is a resource for players to use when browsing spells available to their characters and exploring the different class capabilities. It is meant to be a supplement to resources like The Player’s Handbook and the existing online resources. The spells included are based on the spell lists and classes in the player’s handbook, and spells made available by warlock pacts, cleric domains, and other class specific expansions of the standard spell lists.</p>
 	</header>
 	<div class="body-container">
-		<div class="page-link-div" id="cleric-page-link-div"><a href="cleric.html"><h2>Cleric</h2></a></div>
-		<div class="page-link-div" id="wizard-page-link-div"><a href="wizard.html"><h2>Wizard</h2></a></div>
-		<div class="page-link-div" id="paladin-page-link-div"><a href="paladin.html"><h2>Paladin</h2></a></div>
-		<div class="page-link-div" id="druid-page-link-div"><a href="druid.html"><h2>Druid</h2></a></div>
+		<div class="page-link-div">
+			<div class="page-link-div-image" id="bard-page-link-div"></div>
+			<a href="bard.html">
+				<h2>Bard</h2>
+			</a>
+		</div>
+		<div class="page-link-div">
+			<div class="page-link-div-image" id="cleric-page-link-div"></div>
+			<a href="cleric.html">
+				<h2>Cleric</h2>
+			</a>
+		</div>
+		<div class="page-link-div">
+			<div class="page-link-div-image" id="druid-page-link-div"></div>
+			<a href="druid.html">
+				<h2>Druid</h2>
+			</a>
+		</div>
+		<div class="page-link-div">
+			<div class="page-link-div-image" id="paladin-page-link-div"></div>
+			<a href="paladin.html">
+				<h2>Paladin</h2>
+			</a>
+		</div>
+		<div class="page-link-div">
+			<div class="page-link-div-image" id="ranger-page-link-div"></div>
+			<a href="ranger.html">
+				<h2>Ranger</h2>
+			</a>
+		</div>
+		<div class="page-link-div">
+			<div class="page-link-div-image" id="sorcerer-page-link-div"></div>
+			<a href="sorcerer.html">
+				<h2>Sorcerer</h2>
+			</a>
+		</div>
+		<div class="page-link-div">
+			<div class="page-link-div-image" id="warlock-page-link-div"></div>
+			<a href="warlock.html">
+				<h2>Warlock</h2>
+			</a>
+		</div>
+		<div class="page-link-div">
+			<div class="page-link-div-image" id="wizard-page-link-div"></div>
+			<a href="wizard.html">
+				<h2>Wizard</h2>
+			</a>
+		</div>
 	</div>
 	<footer>
-		<h3>More classes and spells coming soon!</h3>
+		<p class="disclaimers">The DnD 5e Spell Compendium is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
 	</footer>
 </body>
 </html>

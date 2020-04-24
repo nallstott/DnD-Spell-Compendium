@@ -54,6 +54,15 @@ li{
 	letter-spacing: 0.9px;
 }
 
+p{
+	font-family: garamond-premier-pro-display,serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 26px;
+	letter-spacing: 0.9px;
+}
+
 header{
 	overflow: hidden;
 	position: relative;
@@ -76,6 +85,17 @@ header h1{
 header img{
 	width: 100%;
 	transform: translateY(650px);
+}
+
+footer{
+	height: 300px;
+	width: 100%;
+	padding: 0 15%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
 }
 
 .black-20p-overlay{
@@ -111,16 +131,17 @@ header img{
 
 .spell-list{
 	margin-bottom: 50px;
-	width: 350px;
+	width: 50%;
+}
+
+.spell-table{
+	max-width: 100%;
 }
 
 #spell-description-box{
 	display: none;
-	/* align-self: flex-end; */
 	position: sticky;
-	/* right: 50px; */
 	top: 5vh;
-	/* transform: translateY(-50%); */
 	z-index: 3;
 	display: inline-block;
 	width: 45%;
@@ -164,6 +185,13 @@ header img{
 	position: relative;
 }
 
+.domain-description{
+	max-width: 60%;
+	margin: auto;
+	margin-top: 40px;
+	text-align: center;
+}
+
 #close-trigger{
 	min-width: 30px;
 	min-height: 30px;
@@ -191,10 +219,6 @@ header img{
 }
 
 @media only screen and (max-width: 1439px) {
-	.spell-list{
-		width: 200px;
-	}
-
 	h3{
 		font-size: 30px;
 	}
@@ -263,6 +287,7 @@ header img{
 	}
 
 	.spell-list{
+		max-width: 100%;
 		width: 100%;
 	}
 
@@ -299,5 +324,9 @@ header img{
 
 	.spell-page-header{
 		max-height: 200px;
+	}
+
+	footer{
+		padding: 0 30px;
 	}
 }

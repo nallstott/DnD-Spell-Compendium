@@ -3,3 +3,9 @@ header{
 	background-size: cover;
 	background-position: center;
 }
+
+@media screen and (max-width: 1000px){
+	header{
+		background-image: url('images/mobile/ElementalEvil_2560x1600_Earth_Wallpaper.jpg');
+	}
+}

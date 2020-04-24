@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109114111-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-109114111-4');
+	</script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA=Compatible" content="ie=edge">
@@ -14,13 +23,14 @@
 </head>
 <body>
 	<nav>
-		<h4 id="home-trigger"><a href="index.html">DnD 5e spellCompendium</a></h4>
+		<h4 id="home-trigger"><a href="index.html">DnD 5e Spell Compendium</a></h4>
 		<h4 id="classes-menu"><a href="index.html#cleric-page-link-div">Classes</a></h4>
 	</nav>
 	<header class="spell-page-header">
-		<h1>Druid spellList</h1>
+		<h1>Druid Spell List</h1>
 	</header>
-	<div id="toggleDomainSpells"><h4>Toggle Circle Spells</h4></div>
+	<p class="domain-description">Many Druid Circle spells are inherently available to the druid class. The circle spells called out on this page are spells not available to the general Druid class. Refer to The Player's Handbook for a full description of the Druid Circles.</p>
+	<div id="toggleDomainSpells"><h4>Toggle Circle Exclusive Spells</h4></div>
 	<div class="body-container">
 		<div class="spell-list-container">
 			<div class="spell-list cantrip-list">
@@ -85,14 +95,14 @@
 						<li class="spell domain-spell" id="silence">Silence (Coast)</li>
 						<li class="spell domain-spell" id="spiderClimb">Spider Climb (Forest, Mountain, Underdark)</li>
 						<li class="spell" id="spikeGrowth">Spike Growth</li>
-						<li class="spell domain-spell" id="web">Web (UnderDark)</li>
+						<li class="spell domain-spell" id="web">Web (Underdark)</li>
 					</ul>
 			</div>
 			<div class="spell-list level3-list">
 				<h3>Level 3</h3>
 					<ul>
 						<li class="spell" id="callLightning">Call Lightning</li>
-						<li class="spell" id="conjurAnimals">Conjur Animals</li>
+						<li class="spell" id="conjureAnimals">Conjure Animals</li>
 						<li class="spell domain-spell" id="createFoodAndWater">Create Food and Water (Desert)</li>
 						<li class="spell" id="daylight">Daylight</li>
 						<li class="spell" id="dispelMagic">Dispel Magic</li>
@@ -112,6 +122,96 @@
 						<li class="spell" id="waterWall">Water Wall</li>
 					</ul>
 			</div>
+			<div class="spell-list level4-list">
+				<h3>Level 4</h3>
+					<ul>
+						<li class="spell" id="blight">Blight</li>
+						<li class="spell" id="confusion">Confusion</li>
+						<li class="spell" id="conjureMinorElementals">Conjure Minor Elementals</li>
+						<li class="spell" id="conjureWoodlandBeings">Conjure Woodland Beings</li>
+						<li class="spell" id="controlWater">Control Water</li>
+						<li class="spell domain-spell" id="divination">Divination (Grassland)</li>
+						<li class="spell" id="dominateBeast">Dominate Beast</li>
+						<li class="spell" id="freedomOfMovement">Freedom of Movement</li>
+						<li class="spell" id="giantInsect">Giant Insect</li>
+						<li class="spell" id="graspingVine">Grasping Vine</li>
+						<li class="spell domain-spell" id="greaterInvisibility">Greater Invisibility (Underdark)</li>
+						<li class="spell" id="hallucinatoryTerrain">Hallucinatory Terrain</li>
+						<li class="spell" id="iceStorm">Ice Storm</li>
+						<li class="spell" id="locateCreature">Locate Creature</li>
+						<li class="spell" id="polymorph">Polymorph</li>
+						<li class="spell" id="stoneShape">Stone Shape</li>
+						<li class="spell" id="stoneskin">Stoneskin</li>
+						<li class="spell" id="wallOfFire">Wall of Fire</li>
+					</ul>
+			</div>
+			<div class="spell-list level5-list">
+				<h3>Level 5</h3>
+					<ul>
+						<li class="spell" id="antilifeShell">Antilife Shell</li>
+						<li class="spell" id="awaken">Awaken</li>
+						<li class="spell domain-spell" id="cloudkill">Cloudkill (Underdark)</li>
+						<li class="spell" id="communeWithNature">Commune with Nature</li>
+						<li class="spell domain-spell" id="coneOfCold">Cone of Cold (Arctic)</li>
+						<li class="spell" id="conjureElemental">Conjure Elemental</li>
+						<li class="spell" id="contagion">Contagion</li>
+						<li class="spell domain-spell" id="dream">Dream (Grassland)</li>
+						<li class="spell" id="geas">Geas</li>
+						<li class="spell" id="greaterRestoration">Greater Restoration</li>
+						<li class="spell" id="insectPlague">Insect Plague</li>
+						<li class="spell" id="massCureWounds">Mass Cure Wounds</li>
+						<li class="spell domain-spell" id="passwall">Passwall (Mountain)</li>
+						<li class="spell" id="planarBinding">Planar Binding</li>
+						<li class="spell" id="reincarnate">Reincarnate</li>
+						<li class="spell" id="scrying">Scrying</li>
+						<li class="spell" id="treeStride">Tree Stride</li>
+						<li class="spell" id="wallOfStone">Wall of Stone</li>
+					</ul>
+			</div>
+			<div class="spell-list level6-list">
+				<h3>Level 6</h3>
+					<ul>
+						<li class="spell" id="conjureFey">Conjure Fey</li>
+						<li class="spell" id="findThePath">Find the Path</li>
+						<li class="spell" id="heal">Heal</li>
+						<li class="spell" id="heroesFeast">Heroes' Feast</li>
+						<li class="spell" id="moveEarth">Move Earth</li>
+						<li class="spell" id="sunbeam">Sunbeam</li>
+						<li class="spell" id="trueSeeing">True Seeing</li>
+						<li class="spell" id="wallOfIce">Wall of Ice</li>
+					</ul>
+			</div>
+			<div class="spell-list level7-list">
+				<h3>Level 7</h3>
+					<ul>
+						<li class="spell" id="fireStorm">Fire Storm</li>
+						<li class="spell" id="mirageArcane">Mirage Arcane</li>
+						<li class="spell" id="planeShift">Plane Shift</li>
+						<li class="spell" id="regenerate">Regenerate</li>
+						<li class="spell" id="reverseGravity">Reverse Gravity</li>
+					</ul>
+			</div>
+			<div class="spell-list level8-list">
+				<h3>Level 8</h3>
+					<ul>
+						<li class="spell" id="animalShapes">Animal Shapes</li>
+						<li class="spell" id="antipathySympathy">Antipathy/Sympathy</li>
+						<li class="spell" id="controlWeather">Control Weather</li>
+						<li class="spell" id="earthquake">Earthquake</li>
+						<li class="spell" id="feeblemind">Feeblemind</li>
+						<li class="spell" id="sunburst">Sunburst</li>
+						<li class="spell" id="tsunami">Tsunami</li>
+					</ul>
+			</div>
+			<div class="spell-list level9-list">
+				<h3>Level 9</h3>
+					<ul>
+						<li class="spell" id="foresight">Foresight</li>
+						<li class="spell" id="shapechange">Shapechange</li>
+						<li class="spell" id="stormOfVengeance">Storm of Vengeance</li>
+						<li class="spell" id="trueResurrection">True Resurrection</li>
+					</ul>
+			</div>
 		</div>
 		<div id="spell-description-box">
 			<div class="description-box-content">
@@ -127,6 +227,9 @@
 			</div>
 		</div>
 	</div>
+	<footer>
+		<p class="disclaimers">The DnD 5e Spell Compendium is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
+	</footer>
 	<script type="text/javascript" src="./spells.js"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+header{
+	background-image: url('images/Saltmarsh_2560x1600_Wallpaper_Template.jpg');
+	background-size: cover;
+	background-position: top;
+}
+
+@media screen and (max-width: 1000px){
+	header{
+		background-image: url('images/mobile/Saltmarsh_2560x1600_Wallpaper_Template.jpg');
+	}
+}

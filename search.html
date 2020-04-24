@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109114111-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-109114111-4');
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA=Compatible" content="ie=edge">
+	<title>Search for Spell</title>
+	<link rel="icon" href="images/favicon.png" type="image/png">
+	<link rel="stylesheet" href="https://use.typekit.net/nha3vfk.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="search.css">
+	<script type="module" src="./spellsModule.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+	<nav>
+		<h4 id="home-trigger"><a href="index.html">DnD 5e Spell Compendium</a></h4>
+		<h4 id="classes-menu"><a href="index.html#cleric-page-link-div">Classes</a></h4>
+	</nav>
+	<header class="spell-page-header">
+		<h1>Search for Spell</h1>
+	</header>
+	<div class="body-container">
+		<p class="search-intro">This isn’t Google. Type in the name of the spell as it appears in The Player’s Handbook.</p>
+		<input class="list-input" type="text" id="search-input" name="search-input" placeholder="Fireball" / >
+		<button id="searchBtn">Search for Spell</button>
+		<div class="search-return">
+			<ul class="searched-spell-list">
+				<li>item</li>
+			</ul>
+	</div>
+	<footer>
+		<p class="disclaimers">The DnD 5e Spell Compendium is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
+	</footer>
+	<script type="text/javascript" src="./spells.js"></script>
+	<script type="module" src="./search.js"></script>
+</body>
+</html>

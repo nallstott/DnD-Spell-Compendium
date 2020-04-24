@@ -3,3 +3,9 @@ header{
 	background-size: cover;
 	background-position: center;
 }
+
+@media screen and (max-width: 1000px){
+	header{
+		background-image: url('images/mobile/00_Volos_2560x1600_Wallpaper_Template.jpg');
+	}
+}

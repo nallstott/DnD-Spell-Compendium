@@ -1,0 +1,11 @@
+header{
+	background-image: url('images/MM_2560x1600.jpg');
+	background-size: cover;
+	background-position: top center;
+}
+
+@media screen and (max-width: 1000px){
+	header{
+		background-image: url('images/mobile/MM_2560x1600.jpg');
+	}
+}
