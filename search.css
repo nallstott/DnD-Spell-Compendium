@@ -7,9 +7,15 @@
 }
 
 header{
-	background-image: url('images/MOT_2560x1600_Wallpaper.jpg');
+	background-image: url('images/Xanathars_Wallpaper_2560x1600.jpg');
 	background-size: cover;
 	background-position: center;
+}
+
+@media screen and (max-width: 1000px){
+	header{
+		background-image: url('images/mobile/Xanathars_Wallpaper_2560x1600.jpg');
+	}
 }
 
 .list-input{
@@ -35,21 +41,19 @@ header{
 	flex-wrap: wrap;
 }
 
+.search-return{
+	max-width: 800px;
+	margin: auto;
+}
+
 #searchBtn{
 	width: 200px;
 	height: 70px;
 	text-align: center;
-	margin: auto;
-	margin-top: 30px;
+	margin: 30px auto;
 	font-family: garamond-premier-pro-display,serif;
 	font-weight: 700;
 	font-style: normal;
 	font-size: 22px;
 	border: 1px solid black;
-}
-
-@media screen and (max-width: 1000px){
-	header{
-		background-image: url('images/mobile/MOT_2560x1600_Wallpaper.jpg');
-	}
 }

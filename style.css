@@ -88,14 +88,18 @@ header img{
 }
 
 footer{
-	height: 300px;
-	width: 100%;
-	padding: 0 15%;
+	height: 200px;
+	width: 80%;
+	margin: auto;
+	margin-top: 50px;
+	border-top: 1px solid black;
+	padding: 0 5%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	flex-direction: column;
+
 }
 
 .black-20p-overlay{
@@ -112,6 +116,7 @@ footer{
 	display: flex;
 	justify-content: space-between;
 	padding: 50px;
+	padding-bottom: 0px;
 }
 
 .spell{
@@ -136,6 +141,11 @@ footer{
 
 .spell-table{
 	max-width: 100%;
+}
+
+.search-return{
+	max-width: 800px;
+	margin: auto;
 }
 
 #spell-description-box{
@@ -192,6 +202,17 @@ footer{
 	text-align: center;
 }
 
+.nav-right, .nav-left{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+#search-trigger{
+	padding: 20px;
+}
+
 #close-trigger{
 	min-width: 30px;
 	min-height: 30px;
@@ -216,6 +237,19 @@ footer{
 	text-align: center;
 	cursor: pointer;
 	margin: auto;
+}
+
+@media only screen and (min-width: 1000px){
+	.nav-item a{
+		transition-property: color;
+		transition-duration: 0.3s;
+		transition-timing-function: ease;
+	}
+
+	.nav-item a:hover{
+		color: rgb(255, 0, 0);
+		border-bottom: 2px solid black;
+	}
 }
 
 @media only screen and (max-width: 1439px) {
@@ -248,7 +282,7 @@ footer{
 }
 
 @media only screen and (max-width: 1000px){
-	#classes-menu{
+	#search-trigger, #classes-menu{
 		display: none;
 	}
 }

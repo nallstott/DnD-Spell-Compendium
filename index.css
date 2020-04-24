@@ -45,6 +45,11 @@ nav{
 	flex-wrap: wrap;
 }
 
+footer{
+	margin-top: 0;
+	border: none;
+}
+
 .page-link-div{
 	height: 400px;
 	width: 50%;
@@ -84,6 +89,10 @@ nav{
 	background-position: center;
 	background-size: cover;
 	transition: all 0.5s;
+}
+
+.full{
+	width: 100%;
 }
 
 .page-link-div:hover .page-link-div-image{
@@ -126,17 +135,9 @@ nav{
 	background-position: center right 20%;
 }
 
-
-
-footer{
-	height: 300px;
-	width: 100%;
-	padding: 0 15%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	flex-direction: column;
+#search-page-link-div{
+	background-image: url('images/Xanathars_Wallpaper_2560x1600.jpg');
+	background-position: center right 20%;
 }
 
 @media only screen and (max-width: 768px){
@@ -177,6 +178,11 @@ footer{
 
 	#ranger-page-link-div{
 		background-image: url('images/mobile/Saltmarsh_2560x1600_Wallpaper_Template.jpg');
+		background-position: center right 20%;
+	}
+
+	#search-page-link-div{
+		background-image: url('images/mobile/Xanathars_Wallpaper_2560x1600.jpg');
 		background-position: center right 20%;
 	}
 
