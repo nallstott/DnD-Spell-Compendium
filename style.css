@@ -195,6 +195,16 @@ footer{
 	position: relative;
 }
 
+#clearance{
+	background: none;
+	border: none;
+	border-bottom: 2px solid white;
+	color: white;
+	-webkit-text-security: disc;
+	-moz-text-security: disc;
+	text-security: disc;
+}
+
 .domain-description{
 	max-width: 60%;
 	margin: auto;
@@ -231,12 +241,17 @@ footer{
 #toggleDomainSpells{
 	max-width: 90%;
 	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	height: 70px;
 	text-align: center;
 	cursor: pointer;
 	margin: auto;
+}
+
+.domain-spell{
+	display: none;
 }
 
 @media only screen and (min-width: 1000px){

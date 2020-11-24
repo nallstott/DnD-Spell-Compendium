@@ -1,5 +1,5 @@
 class Spell{
-	constructor(name, level, type, castingTime, range, components, duration, description){
+	constructor(name, level, type, castingTime, range, components, duration, description, srd = true){
 		this._name = name;
 		this._level = level;
 		this._type = type;
@@ -8,6 +8,7 @@ class Spell{
 		this._components = components;
 		this._duration = duration;
 		this._description = description;
+		this._srd = srd;
 	}
 
 	get name() {
@@ -41,6 +42,16 @@ class Spell{
 	get description(){
 		return this._description;
 	}
+
+	get srd() {
+		return this._srd;
+	}
+
+	set srd(newStatus) {
+		if (typeof newStatus === "boolean") {
+			this._srd = newStatus;
+		}
+	}
 }
 
 // cantrips
@@ -63,7 +74,8 @@ const bladeWard = new Spell(
 	'Self',
 	'V S',
 	'1 Round',
-	"You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks."
+	"You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.",
+	false
 );
 
 const chillTouch = new Spell(
@@ -129,7 +141,8 @@ const friends = new Spell(
 	'Self',
 	'S M (a small amount of makeup applied to the face as this spell is cast)',
 	'Concentration, Up to 1 minute',
-	"For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn’t hostile toward you. When the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM’s discretion), depending on the nature of your interaction with it."
+	"For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn’t hostile toward you. When the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM’s discretion), depending on the nature of your interaction with it.",
+	false
 );
 
 const guidance = new Spell(
@@ -294,7 +307,8 @@ const spareTheDying = new Spell(
 	'Touch',
 	'V, S',
 	'Instantaneous',
-	'You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.'
+	'You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.',
+	false
 );
 
 const thaumaturgy = new Spell(
@@ -316,7 +330,8 @@ const thornWhip = new Spell(
 	'30 feet',
 	'V S M (the stem of a plant with thorns)',
 	'Instantaneous',
-	"You create a long, vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. If the attack hits, the creature takes 1d6 piercing damage, and if the creature is Large or smaller, you pull the creature up to 10 feet closer to you.<br><br><strong>At Higher Levels:</strong> This spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)."
+	"You create a long, vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. If the attack hits, the creature takes 1d6 piercing damage, and if the creature is Large or smaller, you pull the creature up to 10 feet closer to you.<br><br><strong>At Higher Levels:</strong> This spell’s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+	false
 );
 
 const trueStrike = new Spell(
@@ -372,7 +387,8 @@ const armorOfAgathys = new Spell(
 	'Self',
 	'V S M (a cup of water)',
 	'1 hour',
-	"A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear.<br>You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, both the temporary hit points and the cold damage increase by 5 for each slot."
+	"A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear.<br>You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, both the temporary hit points and the cold damage increase by 5 for each slot.",
+	false
 );
 
 const armsOfHadar = new Spell(
@@ -383,7 +399,8 @@ const armsOfHadar = new Spell(
 	'Self (10 foot radius)',
 	'V S',
 	'Instantaneous',
-	"You invoke the power of Hadar, the Dark Hunger.<br>Tendrils of dark energy erupt from you and batter all creatures within 10 feet of you. Each creature in that area must make a Strength saving throw. On a failed save, a target takes 2d6 necrotic damage and can’t take reactions until its next turn. On a successful save, the creature takes half damage, but suffers no other effect. <br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+	"You invoke the power of Hadar, the Dark Hunger.<br>Tendrils of dark energy erupt from you and batter all creatures within 10 feet of you. Each creature in that area must make a Strength saving throw. On a failed save, a target takes 2d6 necrotic damage and can’t take reactions until its next turn. On a successful save, the creature takes half damage, but suffers no other effect. <br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+	false
 );
 
 const bane = new Spell(
@@ -438,7 +455,8 @@ const chromaticOrb = new Spell(
 	'90 Feet',
 	'V, S, M (a diamond worth at least 50 gp)',
 	'Instantaneous',
-	'You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.'
+	'You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.',
+	false
 );
 
 const colorSpray = new Spell(
@@ -471,7 +489,8 @@ const compelledDuel = new Spell(
 	'30 feet',
 	'V',
 	'Concentration, Up to 1 minute',
-	'You attempt to compel a creature into a duel.<br>One creature that you can see within range must make a Wisdom saving throw. On a failed save, the creature is drawn to you, compelled by your divine demand. For the duration, it has disadvantage on attack rolls against creatures other than you, and must make a Wisdom saving throw each time it attempts to move to a space that is more than 30 feet away from you; if it succeeds on this saving throw, this spell doesn’t restrict the target’s movement for that turn.<br>The spell ends if you attack any other creature, if you cast a spell that targets a hostile creature other than the target, if a creature friendly to you damages the target or casts a harmful spell on it, or if you end your turn more than 30 feet away from the target.'
+	'You attempt to compel a creature into a duel.<br>One creature that you can see within range must make a Wisdom saving throw. On a failed save, the creature is drawn to you, compelled by your divine demand. For the duration, it has disadvantage on attack rolls against creatures other than you, and must make a Wisdom saving throw each time it attempts to move to a space that is more than 30 feet away from you; if it succeeds on this saving throw, this spell doesn’t restrict the target’s movement for that turn.<br>The spell ends if you attack any other creature, if you cast a spell that targets a hostile creature other than the target, if a creature friendly to you damages the target or casts a harmful spell on it, or if you end your turn more than 30 feet away from the target.',
+	false
 );
 
 const comprehendLanguages = new Spell(
@@ -559,7 +578,8 @@ const dissonantWhispers = new Spell(
 	'60 feet',
 	'V',
 	'Instantaneous',
-	"You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain.<br>The target must make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction , if available, to move as far as its speed allows away from you. The creature doesn’t move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn’t have to move away. A deafened creature automatically succeeds on the save.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+	"You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain.<br>The target must make a Wisdom saving throw. On a failed save, it takes 3d6 psychic damage and must immediately use its reaction , if available, to move as far as its speed allows away from you. The creature doesn’t move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn’t have to move away. A deafened creature automatically succeeds on the save.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+	false
 );
 
 const divineFavor = new Spell(
@@ -581,7 +601,8 @@ const ensnaringStrike = new Spell(
 	'Self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point of impact, and the target must succeed on a Strength saving throw or be restrained by the magical vines until the spell ends. A Large or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away.<br>While restrained by this spell, the target takes 1d6 piercing damage at the start of each of its turns. A creature restrained by the vines or one that can touch the creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed.<br><br><strong>At Higher Levels:</strong>If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st."
+	"The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point of impact, and the target must succeed on a Strength saving throw or be restrained by the magical vines until the spell ends. A Large or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away.<br>While restrained by this spell, the target takes 1d6 piercing damage at the start of each of its turns. A creature restrained by the vines or one that can touch the creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed.<br><br><strong>At Higher Levels:</strong>If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+	false
 );
 
 const entangle = new Spell(
@@ -702,7 +723,8 @@ const hailOfThorns = new Spell(
 	'Self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"The next time you hit a creature with a ranged weapon attack before the spell ends, this spell creates a rain of thorns that sprouts from your ranged weapon or ammunition. In addition to the normal effect of the attack, the target of the attack and each creature within 5 feet of it must make a Dexterity saving throw. A creature takes 1d10 piercing damage on a failed save, or half as much damage on a successful one.<br><br><strong>At Higher Levels:</strong> If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st (to a maximum of 6d10)."
+	"The next time you hit a creature with a ranged weapon attack before the spell ends, this spell creates a rain of thorns that sprouts from your ranged weapon or ammunition. In addition to the normal effect of the attack, the target of the attack and each creature within 5 feet of it must make a Dexterity saving throw. A creature takes 1d10 piercing damage on a failed save, or half as much damage on a successful one.<br><br><strong>At Higher Levels:</strong> If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st (to a maximum of 6d10).",
+	false
 );
 
 const healingWord = new Spell(
@@ -746,7 +768,8 @@ const hex = new Spell(
 	'90 feet',
 	'V S M (the petrified eye of a newt)',
 	'Concentration, Up to 1 hour',
-	'You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the spell. The target has disadvantage on ability checks made with the chosen ability.<br>If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to curse a new creature.<br>A remove curse cast on the target ends this spell early.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours.<br>When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours.'
+	'You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the spell. The target has disadvantage on ability checks made with the chosen ability.<br>If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to curse a new creature.<br>A remove curse cast on the target ends this spell early.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours.<br>When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours.',
+	false
 );
 
 const huntersMark = new Spell(
@@ -867,7 +890,8 @@ const rayOfSickness = new Spell(
 	'60 feet',
 	'V S',
 	'Instantaneous',
-	'A ray of sickening greenish energy lashes out toward a creature within range.<br>Make a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.'
+	'A ray of sickening greenish energy lashes out toward a creature within range.<br>Make a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage and must make a Constitution saving throw. On a failed save, it is also poisoned until the end of your next turn.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.',
+	false
 );
 
 const sanctuary = new Spell(
@@ -889,7 +913,8 @@ const searingSmite = new Spell(
 	'Self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"The next time you hit a creature with a melee weapon attack during the spell’s duration, your weapon flares with white-hot intensitity, and the attack deals an extra 1d6 fire damage to the target and causes the target to ignite in flames.<br>At the start of each of its turns until the spell ends, the target must make a Constitution saving throw. On a failed save, it takes 1d6 fire damage. On a successful save, the spells ends. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as the target being submerged in water), the spell ends.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, the initial extra damage dealt by the attack increases by 1d6 for each slot."
+	"The next time you hit a creature with a melee weapon attack during the spell’s duration, your weapon flares with white-hot intensitity, and the attack deals an extra 1d6 fire damage to the target and causes the target to ignite in flames.<br>At the start of each of its turns until the spell ends, the target must make a Constitution saving throw. On a failed save, it takes 1d6 fire damage. On a successful save, the spells ends. If the target or a creature within 5 feet of it uses an action to put out the flames, or if some other effect douses the flames (such as the target being submerged in water), the spell ends.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 2nd level or higher, the initial extra damage dealt by the attack increases by 1d6 for each slot.",
+	false
 );
 
 const shield = new Spell(
@@ -977,7 +1002,8 @@ const thunderousSmite = new Spell(
 	'Self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"The first time you hit with a melee weapon attack during this spell’s duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone."
+	"The first time you hit with a melee weapon attack during this spell’s duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone.",
+	false
 );
 
 const thunderwave = new Spell(
@@ -1010,7 +1036,8 @@ const witchBolt = new Spell(
 	'30 feet',
 	'V S M (a twig from a tree that has been struck by lightning)',
 	'Concentration, Up to 1 minute',
-	'A beam of crackling, blue energy lances out toward a creature within range, forming a sustained arc of lightning between you and the target.<br>Make a ranged spell attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell’s range or if it has total cover from you.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st.'
+	'A beam of crackling, blue energy lances out toward a creature within range, forming a sustained arc of lightning between you and the target.<br>Make a ranged spell attack against that creature. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. The spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell’s range or if it has total cover from you.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 2nd level or higher, the initial damage increases by 1d12 for each slot level above 1st.',
+	false
 );
 
 const wrathfulSmite = new Spell(
@@ -1021,7 +1048,8 @@ const wrathfulSmite = new Spell(
 	'Self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"The next time you hit with a melee weapon attack during this spell’s duration, your attack deals an extra 1d6 psychic damage.<br>Additionally, if the target is a creature, it must make a Wisdom saving throw or be frightened of you until the spell ends. As an action, the creature can make a Wisdom check against your spell save DC to steel its resolve and end this spell."
+	"The next time you hit with a melee weapon attack during this spell’s duration, your attack deals an extra 1d6 psychic damage.<br>Additionally, if the target is a creature, it must make a Wisdom saving throw or be frightened of you until the spell ends. As an action, the creature can make a Wisdom check against your spell save DC to steel its resolve and end this spell.",
+	false
 );
 
 // level 2 Spells
@@ -1099,7 +1127,8 @@ const beastSense = new Spell(
 	'Touch',
 	'S',
 	'Concentration, Up to 1 hour',
-	"You touch a willing beast. For the duration of the spell, you can use your action to see through the beast’s eyes and hear what it hears, and continue to do so until you use your action to return to your normal senses."
+	"You touch a willing beast. For the duration of the spell, you can use your action to see through the beast’s eyes and hear what it hears, and continue to do so until you use your action to return to your normal senses.",
+	false
 );
 
 const blindnessDeafness = new Spell(
@@ -1154,7 +1183,8 @@ const cloudOfDaggers = new Spell(
 	'60 feet',
 	'V S M (a sliver of glass)',
 	'Concentration, Up to 1 minute',
-	'You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell’s area for the first time on a turn or starts its turn there.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.'
+	'You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes 4d4 slashing damage when it enters the spell’s area for the first time on a turn or starts its turn there.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.',
+	false
 );
 
 const continualFlame = new Spell(
@@ -1176,7 +1206,8 @@ const cordonOfArrows = new Spell(
 	'5 Feet',
 	'V S M (four or more arrows or bolts)',
 	'8 hours',
-	"You plant four pieces of nonmagical ammunition – arrows or crossbow bolts – in the ground within range and lay magic upon them to protect an area.<br>Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take 1d6 piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains.<br>When you cast this spell, you can designate any creatures you choose, and the spell ignores them.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd."
+	"You plant four pieces of nonmagical ammunition – arrows or crossbow bolts – in the ground within range and lay magic upon them to protect an area.<br>Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take 1d6 piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains.<br>When you cast this spell, you can designate any creatures you choose, and the spell ignores them.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd.",
+	false
 );
 
 const crownOfMadness = new Spell(
@@ -1187,7 +1218,8 @@ const crownOfMadness = new Spell(
 	'120 feet',
 	'V S',
 	'Concentration, Up to 1 minute',
-	'One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. While the target is charmed in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes.<br>The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if none are within its reach.<br>On your subsequent turns, you must use your action to maintain control over the target, or the spell ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.'
+	'One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. While the target is charmed in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes.<br>The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if none are within its reach.<br>On your subsequent turns, you must use your action to maintain control over the target, or the spell ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.',
+	false
 );
 
 const darkness = new Spell(
@@ -1276,6 +1308,17 @@ const findTraps = new Spell(
 	'V S',
 	'Instantaneous',
 	'You sense the presence of any trap within range that is within line of sight. A trap, for the purpose of this spell, includes anything that would inflict a sudden or unexpected effect you consider harmful or undesirable, which was specifically intended as such by its creator. Thus, the spell would sense an area affected by the alarm spell, a glyph of warding, or a mechanical pit trap, but it would not reveal a natural weakness in the floor, an unstable ceiling, or a hidden sinkhole.<br>This spell merely reveals that a trap is present. You don’t learn the location of each trap, but you do learn the general nature of the danger posed by a trap you sense.'
+);
+
+const flameBlade = new Spell(
+	'Flame Blade',
+	2,
+	'Evocation',
+	'1 Bonus Action',
+	'Self',
+	'V S M (Leaf of sumac)',
+	'Concentration, Up to 10 minutes',
+	'You evoke a fiery blade in your free hand. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If you let go of the blade, it disappears, but you can evoke the blade again as a bonus action. You can use your action to make a melee spell attack with the fiery blade. On a hit, the target takes 3d6 fire damage. The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for every two slot levels above 2nd.'
 );
 
 const flamingSphere = new Spell(
@@ -1495,7 +1538,8 @@ const phantasmalForce = new Spell(
 	'60 Feet',
 	'V S M (a bit of fleece)',
 	'Concentration, Up to 1 minute',
-	'You craft an illusion that takes root in the mind of a creature that you can see within range.The target must make an Intelligence saving throw. On a failed save, you create a phantasmal object, creature, or other visible phenomenon of your choice that is no larger than a 10-foot cube and that is perceivable only to the target for the duration. This spell has no effect on undead or constructs.<br>The phantasm includes sound, temperature, and other stimuli, also evident only to the creature.<br>The target can use its action to examine the phantasm with an Intelligence (Investigation) check against your spell save DC. If the check succeeds, the target realizes that the phantasm is an illusion, and the spell ends.<br>While a target is affected by the spell, the target treats the phantasm as if it were real. The target rationalizes any illogical outcomes from interacting with the phantasm. For example, a target attempting to walk across a phantasmal bridge that spans a chasm falls once it steps onto the bridge. If the target survives the fall, it still believes that the bridge exists and comes up with some other explanation for its fallit was pushed, it slipped, or a strong wind might have knocked it off.<br>An affected target is so convinced of the phantasm’s reality that it can even take damage from the illusion. A phantasm created to appear as a creature can attack the target. Similarly, a phantasm created to appear as fire, a pool of acid, or lava can burn the target. Each round on your turn, the phantasm can deal 1d6 psychic damage to the target if it is in the phantasm’s area or within 5 feet of the phantasm, provided that the illusion is of a creature or hazard that could logically deal damage, such as by attacking. The target perceives the damage as a type appropriate to the illusion.'
+	'You craft an illusion that takes root in the mind of a creature that you can see within range.The target must make an Intelligence saving throw. On a failed save, you create a phantasmal object, creature, or other visible phenomenon of your choice that is no larger than a 10-foot cube and that is perceivable only to the target for the duration. This spell has no effect on undead or constructs.<br>The phantasm includes sound, temperature, and other stimuli, also evident only to the creature.<br>The target can use its action to examine the phantasm with an Intelligence (Investigation) check against your spell save DC. If the check succeeds, the target realizes that the phantasm is an illusion, and the spell ends.<br>While a target is affected by the spell, the target treats the phantasm as if it were real. The target rationalizes any illogical outcomes from interacting with the phantasm. For example, a target attempting to walk across a phantasmal bridge that spans a chasm falls once it steps onto the bridge. If the target survives the fall, it still believes that the bridge exists and comes up with some other explanation for its fallit was pushed, it slipped, or a strong wind might have knocked it off.<br>An affected target is so convinced of the phantasm’s reality that it can even take damage from the illusion. A phantasm created to appear as a creature can attack the target. Similarly, a phantasm created to appear as fire, a pool of acid, or lava can burn the target. Each round on your turn, the phantasm can deal 1d6 psychic damage to the target if it is in the phantasm’s area or within 5 feet of the phantasm, provided that the illusion is of a creature or hazard that could logically deal damage, such as by attacking. The target perceives the damage as a type appropriate to the illusion.',
+	false
 );
 
 const prayerOfHealing = new Spell(
@@ -1684,7 +1728,8 @@ const auraOfVitality = new Spell(
 	'Self (30-foot radius)',
 	'V',
 	'Concentration, Up to 1 minute',
-	"Healing energy radiates from you in an aura with a 30-foot radius.<br>Until the spell ends, the aura moves with you, centered on you. You can use a bonus action to cause one creature in the aura (including you) to regain 2d6 hit points."
+	"Healing energy radiates from you in an aura with a 30-foot radius.<br>Until the spell ends, the aura moves with you, centered on you. You can use a bonus action to cause one creature in the aura (including you) to regain 2d6 hit points.",
+	false
 );
 
 const beaconOfHope = new Spell(
@@ -1717,7 +1762,8 @@ const blindingSmite = new Spell(
 	'Self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"The next time you hit a creature with a melee weapon attack during this spell’s duration, you weapon flares with a bright light, and the attack deals an extra 3d8 radiant damage to the target. Additionally, the target must succeed on a Constitution saving throw or be blinded until the spell ends.<br>A creature blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded."
+	"The next time you hit a creature with a melee weapon attack during this spell’s duration, you weapon flares with a bright light, and the attack deals an extra 3d8 radiant damage to the target. Additionally, the target must succeed on a Constitution saving throw or be blinded until the spell ends.<br>A creature blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded.",
+	false
 );
 
 const blink = new Spell(
@@ -1772,7 +1818,8 @@ const conjureBarrage = new Spell(
 	'Self (60-foot cone)',
 	'V S M (one piece of ammunition or a thrown weapon)',
 	'Instantaneous',
-	"You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the air to create a cone of identical weapons that shoot forward and then disappear. Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A creature takes 3d8 damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the weapon or ammunition used as a component."
+	"You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the air to create a cone of identical weapons that shoot forward and then disappear. Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A creature takes 3d8 damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the weapon or ammunition used as a component.",
+	false
 );
 
 const counterspell = new Spell(
@@ -1805,7 +1852,8 @@ const crusadersMantle = new Spell(
 	'self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each nonhostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack."
+	"Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each nonhostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack.",
+	false
 );
 
 const daylight = new Spell(
@@ -1838,7 +1886,8 @@ const elementalWeapon = new Spell(
 	'Touch',
 	'V S',
 	'Concentration, Up to 1 hour',
-	"A nonmagical weapon you touch becomes a magic weapon.<br>Choose one of the following damage types: acid, cold, fire, lightning, or thunder. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4 damage of the chosen type when it hits.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4.<br>When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4."
+	"A nonmagical weapon you touch becomes a magic weapon.<br>Choose one of the following damage types: acid, cold, fire, lightning, or thunder. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4 damage of the chosen type when it hits.<br><br><strong>At Higher Levels:</strong>When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4.<br>When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4.",
+	false
 );
 
 const fear = new Spell(
@@ -1860,7 +1909,8 @@ const feignDeath = new Spell(
 	'Touch',
 	'V S M (a pinch of graveyard dirt)',
 	'1 Hour',
-	"You touch a willing creature and put it into a cataleptic state that is indistinguishable from death.<br><br>For the spell’s duration, or until you use an action to touch the target and dismiss the spell, the target appears dead to all outward inspection and to spells used to determine the target’s status. The target is blinded and incapacitated, and its speed drops to 0.<br>The target has resistance to all damage except psychic damage. If the target is diseased or poisoned when you cast the spell, or becomes diseased or poisoned while under the spell’s effect, the disease and poison have no effect until the spell ends."
+	"You touch a willing creature and put it into a cataleptic state that is indistinguishable from death.<br><br>For the spell’s duration, or until you use an action to touch the target and dismiss the spell, the target appears dead to all outward inspection and to spells used to determine the target’s status. The target is blinded and incapacitated, and its speed drops to 0.<br>The target has resistance to all damage except psychic damage. If the target is diseased or poisoned when you cast the spell, or becomes diseased or poisoned while under the spell’s effect, the disease and poison have no effect until the spell ends.",
+	false
 );
 
 const fireball = new Spell(
@@ -1926,7 +1976,8 @@ const hungerOfHadar = new Spell(
 	'150 feet',
 	'V S M (a pickled octopus tentacle)',
 	'Concentration, up to 1 minute',
-	"You open a gateway to the dark between the stars, a region infested with unknown horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered on a point with range and lasting for the duration. This void is filled with a cacophony of soft whispers and slurping noises that can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within the area are blinded.<br>The void creates a warp in the fabric of space, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take 2d6 acid damage as milky, otherwordly tentacles rub against it."
+	"You open a gateway to the dark between the stars, a region infested with unknown horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered on a point with range and lasting for the duration. This void is filled with a cacophony of soft whispers and slurping noises that can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within the area are blinded.<br>The void creates a warp in the fabric of space, and the area is difficult terrain. Any creature that starts its turn in the area takes 2d6 cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take 2d6 acid damage as milky, otherwordly tentacles rub against it.",
+	false
 );
 
 const hypnoticPattern = new Spell(
@@ -1959,7 +2010,8 @@ const lightningArrow = new Spell(
 	'Self',
 	'V S',
 	'Concentration, Up to 1 minute',
-	"The next time you make a ranged weapon attack during the spell’s duration, the weapon’s ammunition, or the weapon itself if it’s a thrown weapon, transforms into a bolt of lightning. Make the attack roll as normal, The target takes 4d8 lightning damage on a hit, or half as much damage on a miss, instead of the weapon’s normal damage.<br>Whether you hit or miss, each creature within 10 feet of the target must make a Dexterity saving throw. Each of these creatures takes 2d8 lightning damage on a failed save, or half as much damage on a successful one.<br>The piece of ammunition or weapon then returns to its normal form.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 4th level or higher, the damage for both effects of the spell increases by 1d8 for each slot level above 3rd."
+	"The next time you make a ranged weapon attack during the spell’s duration, the weapon’s ammunition, or the weapon itself if it’s a thrown weapon, transforms into a bolt of lightning. Make the attack roll as normal, The target takes 4d8 lightning damage on a hit, or half as much damage on a miss, instead of the weapon’s normal damage.<br>Whether you hit or miss, each creature within 10 feet of the target must make a Dexterity saving throw. Each of these creatures takes 2d8 lightning damage on a failed save, or half as much damage on a successful one.<br>The piece of ammunition or weapon then returns to its normal form.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 4th level or higher, the damage for both effects of the spell increases by 1d8 for each slot level above 3rd.",
+	false
 );
 
 const lightningBolt = new Spell(
@@ -2004,7 +2056,7 @@ const massHealingWord = new Spell(
 	'V',
 	'Instantaneous',
 	"As you call out words of restoration, up to six creatures of your choice that you can see within range regain hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 4th level or higher, the Healing increases by 1d4 for each slot level above 3rd."
-);
+)
 
 const meldIntoStone = new Spell(
 	'Meld Into Stone',
@@ -2236,7 +2288,8 @@ const auraOfLife = new Spell(
 	'Self (30-foot radius)',
 	'V',
 	'Concentration, Up to 10 minutes',
-	"Life-preserving energy radiates from you in an aura with a 30-foot radius.<br>Until the spll ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) has resistance to necrotic damage, and its hit point maximum can’t be reduced. In addition, a nonhostile, living creature regains 1 hit point when it starts its turn in the arua with 0 hit points."
+	"Life-preserving energy radiates from you in an aura with a 30-foot radius.<br>Until the spll ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) has resistance to necrotic damage, and its hit point maximum can’t be reduced. In addition, a nonhostile, living creature regains 1 hit point when it starts its turn in the arua with 0 hit points.",
+	false
 );
 
 const auraOfPurity = new Spell(
@@ -2247,7 +2300,8 @@ const auraOfPurity = new Spell(
 	'Self (30-foot radius)',
 	'V',
 	'Concentration, Up to 10 minutes',
-	"Purifying energy radiates from you in an aura with a 30-foot radius.<br>Until the spell ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) can’t become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions: blnded, charmed, deafended, frightened, paralyzed, poisoned, and stunned."
+	"Purifying energy radiates from you in an aura with a 30-foot radius.<br>Until the spell ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) can’t become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions: blnded, charmed, deafended, frightened, paralyzed, poisoned, and stunned.",
+	false
 );
 
 const banishment = new Spell(
@@ -2456,7 +2510,8 @@ const graspingVine = new Spell(
 	'30 feet',
 	'V S',
 	'Concentration, Up to 1 minute',
-	"You conjure a vine that sprouts from the ground in an unoccupied space of your choice that you can see within range. When you cast this spell, you can direct the vine to lash out at a creature within 30 feet of it that you can see. That creature must succeed on a Dexterity saving throw or be pulled 20 feet directly toward the vine.<br>Until the spell ends, you can direct the vine to lash out at the same creature or another one as a bonus action on each of your turns."
+	"You conjure a vine that sprouts from the ground in an unoccupied space of your choice that you can see within range. When you cast this spell, you can direct the vine to lash out at a creature within 30 feet of it that you can see. That creature must succeed on a Dexterity saving throw or be pulled 20 feet directly toward the vine.<br>Until the spell ends, you can direct the vine to lash out at the same creature or another one as a bonus action on each of your turns.",
+	false
 );
 
 const hallucinatoryTerrain = new Spell(
@@ -2566,7 +2621,8 @@ const staggeringSmite = new Spell(
 	'Self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"The next time you hit a creature with a melee weapon attack during this spell’s duration, your weapon pierces both body and mind, and the attack deals an extra 4d6 psychic damage to the target. The target must make a Wisdom saving throw. On a failed save, it has disadvantage on attack rolls and ability checks, and can’t take reactions, until the end of its next turn."
+	"The next time you hit a creature with a melee weapon attack during this spell’s duration, your weapon pierces both body and mind, and the attack deals an extra 4d6 psychic damage to the target. The target must make a Wisdom saving throw. On a failed save, it has disadvantage on attack rolls and ability checks, and can’t take reactions, until the end of its next turn.",
+	false
 );
 
 const stoneShape = new Spell(
@@ -2644,7 +2700,8 @@ const banishingSmite = new Spell(
 	'Self',
 	'V',
 	'Concentration, Up to 1 minute',
-	"The next time you hit a creature with a weapon attack before this spell ends, your weapon crackles with force, and the attack deals an extra 5d10 force damage to the target. Additionally, if this attack reduces the target to 50 hit points of fewer, you banish it. If the target is native to a different plane of existence than the on you’re on, the target disappears, returning to its home plane. If the target is native to the plane you’re on, the creature vanishes into a harmless demiplane. While there, the target is incapacitated. It remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied."
+	"The next time you hit a creature with a weapon attack before this spell ends, your weapon crackles with force, and the attack deals an extra 5d10 force damage to the target. Additionally, if this attack reduces the target to 50 hit points of fewer, you banish it. If the target is native to a different plane of existence than the on you’re on, the target disappears, returning to its home plane. If the target is native to the plane you’re on, the creature vanishes into a harmless demiplane. While there, the target is incapacitated. It remains there until the spell ends, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.",
+	false
 );
 
 const bigbysHand = new Spell(
@@ -2666,7 +2723,8 @@ const circleOfPower = new Spell(
 	'Self (30-foot radius)',
 	'V',
 	'Concentration, Up to 10 minutes',
-	"Divine energy radiates from you, distorting and diffusing magical energy within 30 feet of you.<br>Until the spell ends, the sphere moves with you, centered on you. For the duration, each friendly creature in the area (including you) has advantage on saving throws against spells and other magical effects.<br>Additionally, when an affected creature succeeds on a saving throw made against a spell or magical effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throws."
+	"Divine energy radiates from you, distorting and diffusing magical energy within 30 feet of you.<br>Until the spell ends, the sphere moves with you, centered on you. For the duration, each friendly creature in the area (including you) has advantage on saving throws against spells and other magical effects.<br>Additionally, when an affected creature succeeds on a saving throw made against a spell or magical effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throws.",
+	false
 );
 
 const cloudkill = new Spell(
@@ -2733,7 +2791,8 @@ const conjureVolley = new Spell(
 	'150 feet',
 	'V, S, M (one piece of ammunition or one thrown weapon)',
 	'Instantaneous',
-	"You fire a piece of nonmagical ammunition from a ranged weapon or throw a nonmagical weapon into the air and choose a point within range.<br>Hundreds of duplicates of the ammunition or weapon fall in a volley from above and then disappear. Each creature in a 40-foot-radius. 20-foot-high cylinder centered on that point must make a Dexterity saving throw. A creature takes 8d8 damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the ammunition or weapon."
+	"You fire a piece of nonmagical ammunition from a ranged weapon or throw a nonmagical weapon into the air and choose a point within range.<br>Hundreds of duplicates of the ammunition or weapon fall in a volley from above and then disappear. Each creature in a 40-foot-radius. 20-foot-high cylinder centered on that point must make a Dexterity saving throw. A creature takes 8d8 damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the ammunition or weapon.",
+	false
 );
 
 const contactOtherPlane = new Spell(
@@ -2777,7 +2836,8 @@ const destructiveWave = new Spell(
 	'Self (30-foot radius)',
 	'V',
 	'Instantaneous',
-	"You strike the ground, creating a burst of divine energy that ripples outward from you. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw or take 5d6 thunder damage, as well as 5d6 radiant or necrotic damage (your choice), and be knocked prone. A creature that succeeds on its saving throw takes half as much damage and isn’t knocked prone."
+	"You strike the ground, creating a burst of divine energy that ripples outward from you. Each creature you choose within 30 feet of you must succeed on a Constitution saving throw or take 5d6 thunder damage, as well as 5d6 radiant or necrotic damage (your choice), and be knocked prone. A creature that succeeds on its saving throw takes half as much damage and isn’t knocked prone.",
+	false
 );
 
 const dispelEvilAndGood = new Spell(
@@ -3009,7 +3069,8 @@ const swiftQuiver = new Spell(
 	'Touch',
 	'V S M (a quiver containing at least one piece of ammunition)',
 	'Concentration, Up to 1 minute',
-	"You transmute your quiver so it produces an endless supply of nonmagical ammunition, which seems to leap into your hand when you reach for it.<br>On each of your turns until the spell ends, you can use a bonus action to make two attacks with a weapon that uses ammunition from the quiver. Each time you make such a ranged attack, your quiver magically replaces the piece of ammunition you used with a similar piece of nonmagical ammunition. Any pieces of ammunition created by this spell disintegrate when the spell ends. If the quiver leaves your possession, the spell ends."
+	"You transmute your quiver so it produces an endless supply of nonmagical ammunition, which seems to leap into your hand when you reach for it.<br>On each of your turns until the spell ends, you can use a bonus action to make two attacks with a weapon that uses ammunition from the quiver. Each time you make such a ranged attack, your quiver magically replaces the piece of ammunition you used with a similar piece of nonmagical ammunition. Any pieces of ammunition created by this spell disintegrate when the spell ends. If the quiver leaves your possession, the spell ends.",
+	false
 );
 
 const telekinesis = new Spell(
@@ -3076,7 +3137,8 @@ const arcaneGate = new Spell(
 	'500 feet',
 	'V S',
 	'Concentration, Up to 10 minutes',
-	"You create linked teleportation portals that remain open for the duration.<br>Choose two points on the ground that you can see, one point within 10 feet of you and one point within 500 feet of you. A circular portal, 10 feet in diameter, opens over each point. If the portal would open in the space occupied by a creature, the spell fails, and the casting is lost.<br>The portals are two-dimensional glowing rings filled with mist, hovering inches from the ground and perpendicular to it at the points you choose. A ring is visible only from one side (your choice), which is the side that functions as a portal.<br>Any creature or object entering the portal exits from the other portal as if the two were adjacent to each other; passing through a portal from the nonportal side has no effect. The mist that fills each portal is opaque and blocks vision through it. On your turn, you can rotate the rings as a bonus action so that the active side faces in a different direction."
+	"You create linked teleportation portals that remain open for the duration.<br>Choose two points on the ground that you can see, one point within 10 feet of you and one point within 500 feet of you. A circular portal, 10 feet in diameter, opens over each point. If the portal would open in the space occupied by a creature, the spell fails, and the casting is lost.<br>The portals are two-dimensional glowing rings filled with mist, hovering inches from the ground and perpendicular to it at the points you choose. A ring is visible only from one side (your choice), which is the side that functions as a portal.<br>Any creature or object entering the portal exits from the other portal as if the two were adjacent to each other; passing through a portal from the nonportal side has no effect. The mist that fills each portal is opaque and blocks vision through it. On your turn, you can rotate the rings as a bonus action so that the active side faces in a different direction.",
+	false
 );
 
 const bladeBarrier = new Spell(
@@ -3354,6 +3416,17 @@ const sunbeam = new Spell(
 	"A beam of brilliant light flashes out from your hand in a 5-foot-wide, 60-foot-long line. Each creature in the line must make a Constitution saving throw. On a failed save, a creature takes 6d8 radiant damage and is blinded until your next turn. On a successful save, it takes half as much damage and isn’t blinded by this spell. Undead and oozes have disadvantage on this saving throw.<br>You can create a new line of radiance as your action on any turn until the spell ends.<br>For the duration, a mote of brilliant radiance shines in your hand. It sheds bright light in a 30-foot radius and dim light for an additional 30 feet. This light is sunlight."
 );
 
+const transportViaPlants = new Spell(
+	"Transport via Plants",
+	6,
+	'Conjuration',
+	'1 Action',
+	'10 feet',
+	'V S',
+	'1 round',
+	"This spell creates a magical link between a Large or larger inanimate plant within range and another plant, at any distance, on the same plane of existence. You must have seen or touched the destination plant at least once before. For the duration, any creature can step into the target plant and exit from the destination plant by using 5 feet of movement."
+);
+
 const trueSeeing = new Spell(
 	"True Seeing",
 	6,
@@ -3374,6 +3447,28 @@ const wallOfIce = new Spell(
 	'V S M (A small piece of quartz)',
 	'Concentration, Up to 10 minutes',
 	"You create a wall of ice on a solid surface within range. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-square panels. Each panel must be contiguous with another panel. In any form, the wall is 1 foot thick and lasts for the duration. If the wall cuts through a creature’s space when it appears, the creature within its area is pushed to one side of the wall and must make a Dexterity saving throw. On a failed save, the creature takes 10d6 cold damage, or half as much damage on a successful save. The wall is an object that can be damaged and thus breached. It has AC 12 and 30 hit points per 10-foot section, and it is vulnerable to fire damage. Reducing a 10-foot section of wall to 0 hit points destroys it and leaves behind a sheet of frigid air in the space the wall occupied. A creature moving through the sheet of frigid air for the first time on a turn must make a Constitution saving throw. That creature takes 5d6 cold damage on a failed save, or half as much damage on a successful one.<br><br><strong>At Higher Levels:</strong> When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears increases by 2d6, and the damage from passing through the sheet of frigid air increases by 1d6 for each slot level above 6th."
+);
+
+const wallOfThorns = new Spell(
+	"Wall of Thorns",
+	6,
+	'Conjuration',
+	'1 Action',
+	'120 feet',
+	'V S M (A handful of thorns)',
+	'Concentration, Up to 10 minutes',
+	"You create a wall of tough, pliable, tangled brush bristling with needle-sharp thorns. The wall appears within range on a solid surface and lasts for the duration. You choose to make the wall up to 60 feet long, 10 feet high, and 5 feet thick or a circle that has a 20-foot diameter and is up to 20 feet high and 5 feet thick. The wall blocks line of sight. When the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes 7d8 piercing damage, or half as much damage on a successful save. A creature can move through the wall, albeit slowly and painfully. For every 1 foot a creature moves through the wall, it must spend 4 feet of movement. Furthermore, the first time a creature enters the wall on a turn or ends its turn there, the creature must make a Dexterity saving throw. It takes 7d8 slashing damage on a failed save, or half as much damage on a successful one.<br><br><strong>At Higher Levels:</strong> hen you cast this spell using a spell slot of 7th level or higher, both types of damage increase by 1d8 for each slot level above 6th."
+);
+
+const windWalk = new Spell(
+	"Wind Walk",
+	6,
+	'Transmutation',
+	'1 Minute',
+	'30 feet',
+	'V, S, M (fire and holy water)',
+	'8 hours',
+	"You and up to ten willing creatures you can see within range assume a gaseous form for the duration, appearing as wisps of cloud. While in this cloud form, a creature has a flying speed of 300 feet and has resistance to damage from nonmagical weapons. The only actions a creature can take in this form are the Dash action or to revert to its normal form. Reverting takes 1 minute, during which time a creature is incapacitated and can’t move. Until the spell ends, a creature can revert to cloud form, which also requires the 1-minute transformation. If a creature is in cloud form and flying when the effect ends, the creature descends 60 feet per round for 1 minute until it lands, which it does safely. If it can’t land after 1 minute, the creature falls the remaining distance."
 );
 
 const wordOfRecall = new Spell(
@@ -3793,7 +3888,8 @@ const telepathy = new Spell(
 	'Unlimited',
 	'V S M (A pair of linked silver rings)',
 	'24 hours',
-	"You create a telepathic link between yourself and a willing creature with which you are familiar.<br>The creature can be anywhere on the same plane of existence as you. The spell ends if you or the target are no longer on the same plane.<br>Until the spell ends, you and the target can instantaneously share words, images, sounds, and other sensory messages with one another through the link, and the target recognizes you as the creature it is communicating with. The spell enables a creature with an Intelligence score of at least 1 to understand the meaning of your words and take in the scope of any sensory messages you send to it."
+	"You create a telepathic link between yourself and a willing creature with which you are familiar.<br>The creature can be anywhere on the same plane of existence as you. The spell ends if you or the target are no longer on the same plane.<br>Until the spell ends, you and the target can instantaneously share words, images, sounds, and other sensory messages with one another through the link, and the target recognizes you as the creature it is communicating with. The spell enables a creature with an Intelligence score of at least 1 to understand the meaning of your words and take in the scope of any sensory messages you send to it.",
+	false
 );
 
 const tsunami = new Spell(
@@ -3804,7 +3900,8 @@ const tsunami = new Spell(
 	'Sight',
 	'V S',
 	'Concentration, Up to 6 rounds',
-	"A wall of water springs into existence at a point you choose within range. You can make the wall up to 300 feet long, 300 feet high, and 50 feet thick. The wall lasts for the duration.<br>When the wall appears, each creature within its area must make a Strength saving throw. On a failed save, a creature takes 6d10 bludgeoning damage, or half as much damage on a successful save.<br>At the start of each of your turns after the wall appears, the wall, along with any creatures in it, moves 50 feet away from you. Any Huge or smaller creature inside the wall or whose space the wall enters when it moves must succeed on a Strength saving throw or take 5d10 bludgeoning damage. A creature can take this damage only once per round. At the end of the turn, the wall’s height is reduced by 50 feet, and the damage creatures take from the spell on subsequent rounds is reduced by 1d10. When the wall reaches 0 feet in height, the spell ends.<br>A creature caught in the wall can move by swimming. Because of the force of the wave, though, the creature must make a successful Strength (Athletics) check against your spell save DC in order to move at all. If it fails the check, it can’t move. A creature that moves out of the area falls to the ground."
+	"A wall of water springs into existence at a point you choose within range. You can make the wall up to 300 feet long, 300 feet high, and 50 feet thick. The wall lasts for the duration.<br>When the wall appears, each creature within its area must make a Strength saving throw. On a failed save, a creature takes 6d10 bludgeoning damage, or half as much damage on a successful save.<br>At the start of each of your turns after the wall appears, the wall, along with any creatures in it, moves 50 feet away from you. Any Huge or smaller creature inside the wall or whose space the wall enters when it moves must succeed on a Strength saving throw or take 5d10 bludgeoning damage. A creature can take this damage only once per round. At the end of the turn, the wall’s height is reduced by 50 feet, and the damage creatures take from the spell on subsequent rounds is reduced by 1d10. When the wall reaches 0 feet in height, the spell ends.<br>A creature caught in the wall can move by swimming. Because of the force of the wave, though, the creature must make a successful Strength (Athletics) check against your spell save DC in order to move at all. If it fails the check, it can’t move. A creature that moves out of the area falls to the ground.",
+	false
 );
 
 
@@ -3883,18 +3980,19 @@ const powerWordHeal = new Spell(
 	'60 feet',
 	'V',
 	'Instantaneous',
-	"You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell has no effect."
+	"You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell has no effect.",
+	false
 );
 
 const powerWordKill = new Spell(
 	"Power Word Kill",
 	9,
-	'Evocation',
+	'Enchantment',
 	'1 Action',
-	'Touch',
-	'V S',
+	'60 feet',
+	'V',
 	'Instantaneous',
-	"A wave of healing energy washes over the creature you touch. The target regains all its hit points. If the creature is charmed, frightened, paralyzed, or stunned, the condition ends. If the creature is prone, it can use its reaction to stand up. This spell has no effect on undead or constructs."
+	"You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell has no effect."
 );
 
 const prismaticWall = new Spell(
@@ -3985,6 +4083,17 @@ const wish = new Spell(
 	"Wish is the mightiest spell a mortal creature can cast. By simply speaking aloud, you can alter the very foundations of reality in accord with your desires.<br>The basic use of this spell is to duplicate any other spell of 8th level or lower. You don’t need to meet any requirements in that spell, including costly components. The spell simply takes effect.<br>Alternatively, you can create one of the following effects of your choice:<br><br>You create one object of up to 25,000 gp in value that isn’t a magic item. The object can be no more than 300 feet in any dimension, and it appears in an unoccupied space you can see on the ground.<br><br>You allow up to twenty creatures that you can see to regain all hit points, and you end all effects on them described in the greater restoration spell.<br><br>You grant up to ten creatures that you can see resistance to a damage type you choose.<br><br>You grant up to ten creatures you can see immunity to a single spell or other magical effect for 8 hours. For instance, you could make yourself and all your companions immune to a lich’s life drain attack.<br><br>You undo a single recent event by forcing a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish spell could undo an opponent’s successful save, a foe’s critical hit, or a friend’s failed save. You can force the reroll to be made with advantage or disadvantage, and you can choose whether to use the reroll or the original roll.<br><br>You might be able to achieve something beyond the scope of the above examples. State your wish to the GM as precisely as possible. The GM has great latitude in ruling what occurs in such an instance; the greater the wish, the greater the likelihood that something goes wrong. This spell might simply fail, the effect you desire might only be partly achieved, or you might suffer some unforeseen consequence as a result of how you worded the wish. For example, wishing that a villain were dead might propel you forward in time to a period when that villain is no longer alive, effectively removing you from the game. Similarly, wishing for a legendary magic item or artifact might instantly transport you to the presence of the item’s current owner.<br><br>The stress of casting this spell to produce any effect other than duplicating another spell weakens you. After enduring that stress, each time you cast a spell until you finish a long rest, you take 1d10 necrotic damage per level of that spell. This damage can’t be reduced or prevented in any way. In addition, your Strength drops to 3, if it isn’t 3 or lower already, for 2d4 days. For each of those days that you spend resting and doing nothing more than light activity, your remaining recovery time decreases by 2 days. Finally, there is a 33 percent chance that you are unable to cast wish ever again if you suffer this stress."
 );
 
+//read site cookies
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
 
 // update the spell description box
 const spellDescriptionBox = document.querySelector('#spell-description-box');
@@ -3998,18 +4107,35 @@ const spellComponents = document.querySelector('#spell-components');
 const spellDuration = document.querySelector('#spell-duration');
 const spellDescription = document.querySelector('#spell-description');
 const spellTriggers = document.getElementsByClassName('spell');
+const srdClearanceForm = document.querySelector('#SRD-clearance-form');
 
 
 //update the spell description box
 function spellDetails(spell) {
-	spellName.innerHTML = spell.name;
-	spellLevel.innerHTML = `Level: ${spell.level}`;
-	spellType.innerHTML = `Type: ${spell.type}`;
-	spellCastingTime.innerHTML = `Casting Time: ${spell.castingTime}`;
-	spellRange.innerHTML = `Range: ${spell.range}`;
-	spellComponents.innerHTML = `Components: ${spell.components}`;
-	spellDuration.innerHTML = `Duration: ${spell.duration}`;
-	spellDescription.innerHTML = spell.description;
+	if (readCookie('SRDClearance') === 1 || readCookie('SRDClearance') === '1'){
+		spell.srd = true;
+	}
+	if (spell.srd === true){
+		spellName.innerHTML = spell.name;
+		spellLevel.innerHTML = `Level: ${spell.level}`;
+		spellType.innerHTML = `Type: ${spell.type}`;
+		spellCastingTime.innerHTML = `Casting Time: ${spell.castingTime}`;
+		spellRange.innerHTML = `Range: ${spell.range}`;
+		spellComponents.innerHTML = `Components: ${spell.components}`;
+		spellDuration.innerHTML = `Duration: ${spell.duration}`;
+		spellDescription.innerHTML = spell.description;
+		srdClearanceForm.style.display = "none";
+	} else {
+		spellName.innerHTML = spell.name;
+		spellLevel.innerHTML = `Level: `;
+		spellType.innerHTML = `Type: `;
+		spellCastingTime.innerHTML = `Casting Time: `;
+		spellRange.innerHTML = `Range: `;
+		spellComponents.innerHTML = `Components: `;
+		spellDuration.innerHTML = `Duration: `;
+		spellDescription.innerHTML = "This spell is not available in the WOTC SRD documentation. Please consult the player's handbook directly.";
+		srdClearanceForm.style.display = "block";
+	}
 }
 
 //make all spell elements triggers forthe spellDetails function
@@ -4025,11 +4151,16 @@ closeSpellDesBoxTrig.addEventListener('click', () => {
 	spellDescriptionBox.style.display = 'none';
 })
 
-//toggl class specific spell visibility
-toggleDomainSpells.addEventListener('click', () => {
-	for (let x = 0; x < spellTriggers.length; x++){
-		if (spellTriggers[x].classList.contains('domain-spell')){
-			$(spellTriggers[x]).toggle();
+//toggle class specific spell visibility
+if (readCookie('SRDClearance') === 1 || readCookie('SRDClearance') === '1'){
+	document.querySelector('#toggleDomainSpells').style.display = "flex";
+}
+if (document.querySelector('#toggleDomainSpells')){
+		toggleDomainSpells.addEventListener('click', () => {
+		for (let x = 0; x < spellTriggers.length; x++){
+			if (spellTriggers[x].classList.contains('domain-spell')){
+				$(spellTriggers[x]).toggle();
+			}
 		}
-	}
-})
+	})
+}
