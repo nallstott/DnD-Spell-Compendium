@@ -17,7 +17,7 @@
 	<meta http-equiv="X-UA=Compatible" content="ie=edge">
 	<title>DnD 5e Spell Compendium</title>
 	<link rel="icon" href="images/favicon.png" type="image/png">
-	<link rel="stylesheet" href="https://use.typekit.net/nha3vfk.css">
+	<link rel="stylesheet" href="https://use.typekit.net/cxo2npv.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="index.css">
